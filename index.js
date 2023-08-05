@@ -1,6 +1,15 @@
 require('dotenv').config();
 const {PORT}= process.env;
+const { DB_DIALECT, DB_NAME, DB_USER, DB_PASSWORD, DB_HOST,DB_PORT} = process.env;
 
+const {Sequelize }            = require('sequelize');
+
+const sequelize = new Sequelize(`${DB_DIALECT}://${DB_USER}:${DB_PASSWORD}@${DB_HOST}:${DB_PORT}/${DB_NAME}`, 
+  { 
+    logging: false,
+    native:false
+  }
+  )
 
 const cors         = require('cors');
 const express      = require('express');
