@@ -1,14 +1,11 @@
 require('dotenv').config();
 const {PORT}= process.env;
 
-const { db } = require('./src/db.js');
-
 
 const cors         = require('cors');
 const express      = require('express');
 const fileUpload   = require('express-fileupload');
 
-const express = require('express');
 const server = express();
 
 server.use(cors());
